@@ -16,6 +16,7 @@ describe('QA Tech Assessment', () =>
 
     it('Click on Search Input and Enter Vancouver location', () => {
         HomePage.clickOnSearchInputAndEnterVancouver('Vancouver');
+        HomePage.selectCity();
     }),
 
     it('Click on Search Button', () => {

@@ -15,16 +15,22 @@ class HomePage
     clickOnAttractions()
     {
          return cy.get('iframe')
-                  .get('[class="bui-tab__link"]').eq(4)
-                  .click();
+                  .get('[class="bui-tab__link"]').eq(3)
+                  .click({force:true});
     }
     
     clickOnSearchInputAndEnterVancouver(searchText)
     {
-         cy.get('[name="query"]')
-           .click();
-         cy.type(searchText);
-         return this;
+        return cy.get('iframe')
+                 .get('[data-testid="search-input-field"]')
+                 .click()
+                 .type(searchText);          
+    }
+
+    selectCity()
+    {
+        return cy.get('[city="vancouver"]')
+                 .click({multiple:true});
     }
 
     clickOnSearchButton()
@@ -45,7 +51,8 @@ class HomePage
     {
         return cy.get('[data-testid="datepicker"]')
                  .click()
-                 .type('10/24/2022');
+                 .get('[name="dateSelector"]')
+                 .select('2022-10-24');
     }
 
     incrementAdultTicketCounter()
