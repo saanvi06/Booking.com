@@ -6,7 +6,7 @@ import './../support/e2e';
 
 describe('QA Tech Assessment', () => 
 { 
-    it('visit booking.com website', () => {        
+    it('Visit booking.com website', () => {        
         cy.visit('www.booking.com');
     }),
 

@@ -1,17 +1,6 @@
 class HomePage
 {
-   /*  elements: {
-        attractions:'[data-decider-header="attractions"]';
-        searchInput:'[name="query"]';
-        searchButton:'[type="submit"]';
-        attractionTitle:'[title="Capilano Suspension Bridge Park Admission"]';
-        datePicker:'[data-testid="datepicker"]';
-        ticketIncrementor:'[class="fc63351294 a822bdf511 e3c025e003 fa565176a8 f7db01295e e1b7cfea84 d64a4ea64d"]'; //first element
-        nextButton: '[data-testid="select-ticket"]';
-        totalBeforeNext: '[class="css-j7qwjs"]'; //2nd element
-        totalAfterNext: '[data-testid="price-breakdown-total"]'; //2nd element
-    } */
-    
+    //Click on Attractions link after visiting booking.com website
     clickOnAttractions()
     {
          return cy.get('iframe')
@@ -19,6 +8,7 @@ class HomePage
                   .click({force:true});
     }
     
+    //Enter Vancouver as destination search text
     clickOnSearchInputAndEnterVancouver(searchText)
     {
         return cy.get('iframe')
@@ -27,18 +17,22 @@ class HomePage
                  .type(searchText);          
     }
 
+    //Select Vancouver, British Columbia from the list of options
     selectCity()
     {
         return cy.get('[city="vancouver"]')
-                 .click({multiple:true});
+                 .first()
+                 .click({force:true});
     }
 
+    //Click on search button after selecting the city
     clickOnSearchButton()
     {
         return cy.get('[type="submit"]')
                  .click();
     }
 
+    //Select Capilano Suspension bridge from the list of attractions
     clickOnCaplianoAttraction()
     {
         return cy.get('[title="Capilano Suspension Bridge Park Admission"]')
@@ -47,14 +41,16 @@ class HomePage
 
     }
 
+    //Select date to visit the attraction
     selectDatesForAttraction()
     {
         return cy.get('[data-testid="datepicker"]')
-                 .click()
-                 .get('[name="dateSelector"]')
-                 .select('2022-10-24');
+                 .click()                 
+                 .contains('2022-10-24')
+                 .click({force:true});
     }
 
+    //Increment the adult ticket counter by 1
     incrementAdultTicketCounter()
     {
         return cy.get('[class="fc63351294 a822bdf511 e3c025e003 fa565176a8 f7db01295e e1b7cfea84 d64a4ea64d"]')
@@ -62,12 +58,14 @@ class HomePage
                  .click();
     }
 
+    //Navigate to checkout page
     navigateToCheckout()
     {
         return cy.get('[data-testid="select-ticket"]')
                  .click();
     }
 
+    //Verify the Total price for booking the attraction
     verifyTotalPrice()
     {
         return cy.get('[data-testid="price-breakdown-total"]').eq(2);
