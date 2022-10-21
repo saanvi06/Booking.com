@@ -8,3 +8,12 @@ Test scenario:
 4. Select a date to visit this attraction 
 5. Increment the adult ticket by 1 and click Next
 6. Verify the price on the checkout page
+
+Install Node.js and Cypress to run the test
+I performed the test by installing cypress by directly downloading from CDN location. 
+
+But, if you prefer to install Node.js then cypress can be installed via the following commands
+Install Cypress via npm:
+
+cd /your/project/path
+npm install cypress --save-dev
