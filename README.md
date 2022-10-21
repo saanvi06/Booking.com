@@ -17,3 +17,6 @@ Install Cypress via npm:
 
 cd /your/project/path
 npm install cypress --save-dev
+
+Screenshot from successful test run on cypress runner
+![image](https://user-images.githubusercontent.com/68978458/197110416-4610c503-8567-4a6e-a506-30f4eb1433e2.png)
