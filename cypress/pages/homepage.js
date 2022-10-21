@@ -44,9 +44,8 @@ class HomePage
     //Select date to visit the attraction
     selectDatesForAttraction()
     {
-        return cy.get('[data-testid="datepicker"]')
-                 .click()                 
-                 .contains('2022-10-24')
+        return cy.get('[data-testid="datapicker-calendar"]')                
+                 .find('[data-date="2022-10-29"]')
                  .click({force:true});
     }
 
