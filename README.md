@@ -16,6 +16,7 @@ But, if you prefer to install Node.js then cypress can be installed via the foll
 Install Cypress via npm:
 
 cd /your/project/path
+
 npm install cypress --save-dev
 
 Screenshot from successful test run on cypress runner
